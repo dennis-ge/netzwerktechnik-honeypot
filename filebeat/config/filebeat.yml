@@ -1,28 +1,26 @@
 filebeat.inputs:
-  - type: docker
-    containers:
-      path: "/usr/share/dockerlogs/data"
-      stream: "stdout"
-      ids:
-          - "*"
-      cri.parse_flags: true
-      combine_partial: true
-      exclude_files: ['\.gz$']
-  
-processors:
-  - add_docker_metadata:
-      host: "unix:///var/run/docker.sock"
+  #- type: docker
+   # containers.ids: '*'
+   # json.message_key: message
+  #  json.keys_under_root: true
+ #   json.add_error_key: true
+ #   json.overwrite_keys: true
+  - type: log
+    paths:
+    - /var/lib/docker/volumes/*/_data/log/cowrie/cowrie.json
+    encoding: plain
+    exclude_files: ['\.gz$']
+    tags: ["cowrie"]
 
-filebeat.config.modules:
-  path: ${path.config}/modules.d/*.yml
-  reload.enabled: false
-  
-  # setup filebeat to send output to logstash
+processors:
+  - drop_fields:
+      fields: ["agent.ephemeral_id", "agent.hostname", "agent.id", "agent.type", "agent.version", "input.type", "log.offset", "version"]
+
 output.logstash:
-  hosts: ["127.0.0.1:5044"]
+  hosts: ["logstash:5044"]
+  protocol: http
   
   # Write Filebeat own logs only to file to avoid catching them with itself in docker log files
-logging.level: error
 logging.to_files: false
 logging.to_syslog: false
 loggins.metrice.enabled: false
