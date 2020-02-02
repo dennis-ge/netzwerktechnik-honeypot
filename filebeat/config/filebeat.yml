@@ -1,20 +1,19 @@
 filebeat.inputs:
-  #- type: docker
-   # containers.ids: '*'
-   # json.message_key: message
-  #  json.keys_under_root: true
- #   json.add_error_key: true
- #   json.overwrite_keys: true
   - type: log
     paths:
-    - /var/lib/docker/volumes/*/_data/log/cowrie/cowrie.json
+    - /var/lib/docker/volumes/*/_data/cowrie.json
     encoding: plain
-    exclude_files: ['\.gz$']
     tags: ["cowrie"]
+  - type: log
+    paths:
+    - /var/lib/docker/volumes/*/_data/dionaea.json
+    encoding: plain
+    tags: ["dionaea"]
+    
 
 processors:
   - drop_fields:
-      fields: ["agent.ephemeral_id", "agent.hostname", "agent.id", "agent.type", "agent.version", "input.type", "log.offset", "version"]
+      fields: ["ecs.version","agent.ephemeral_id", "agent.hostname", "agent.id", "agent.type", "agent.version", "input.type", "log.offset", "version", "host.name"]
 
 output.logstash:
   hosts: ["logstash:5044"]

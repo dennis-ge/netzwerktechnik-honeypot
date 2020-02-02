@@ -94,15 +94,49 @@ services:
       - "2222:2222"
       - "2223:2223"
     volumes:
-      - cowrie:/cowrie/etc
-      - cowrie:/cowrie/var
+      - cowrie-var:/cowrie/cowrie-git/var/log/cowrie/
+      - cowrie-etc:/cowrie/cowrie-git/etc
     networks:
-        - elk
+        - honeypots
+
+  dionaea:
+    container_name: honey_dionaea
+    restart: always
+    build:
+      context: dionaea/
+    ports:
+      - "20:20"
+      - "21:21"
+      - "42:42"
+      - "69:69/udp"
+      - "81:81"
+      - "135:135"
+      - "443:443"
+      - "445:445"
+      - "1433:1433"
+      - "1723:1723"
+      - "1883:1883"
+      - "1900:1900"
+      - "3306:3306"
+      - "5060:5060/udp"
+      - "5061:5061"
+      - "11211:11211"
+      - "27017:27017"
+    volumes:
+      - dionaea:/opt/dionaea/var/log
+    networks:
+      - honeypots
 
 networks:
   elk:
+  honeypots:
 
 volumes:
   esdata:
     driver: local
-  cowrie:
+  cowrie-var:
+    driver: local
+  cowrie-etc:
+    driver: local
+  dionaea:
+    driver: local
