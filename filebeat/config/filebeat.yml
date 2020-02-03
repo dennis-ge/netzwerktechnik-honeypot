@@ -2,12 +2,10 @@ filebeat.inputs:
   - type: log
     paths:
     - /var/lib/docker/volumes/*/_data/cowrie.json
-    encoding: plain
     tags: ["cowrie"]
   - type: log
     paths:
     - /var/lib/docker/volumes/*/_data/dionaea.json
-    encoding: plain
     tags: ["dionaea"]
     
 
@@ -19,7 +17,7 @@ output.logstash:
   hosts: ["logstash:5044"]
   protocol: http
   
-  # Write Filebeat own logs only to file to avoid catching them with itself in docker log files
+
 logging.to_files: false
 logging.to_syslog: false
 loggins.metrice.enabled: false

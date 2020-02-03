@@ -10,7 +10,6 @@ services:
     environment:
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
       ELASTIC_PASSWORD: changeme
-      discovery.zen.minimum_master_nodes: 1
       discovery.type: single-node
     volumes:
       - type: bind
