@@ -1,7 +1,7 @@
 filebeat.inputs:
   - type: log
     paths:
-    - /var/lib/docker/volumes/*/_data/cowrie.json
+    - /var/lib/docker/volumes/*/_data/cowrie.json*
     tags: ["cowrie"]
   - type: log
     paths:
