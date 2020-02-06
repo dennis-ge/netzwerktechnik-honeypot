@@ -52,7 +52,7 @@ Man startet das Ganze mit dem nachfolgendem Befehl, wobei ELK_VERSION die Versio
 
 ## Architektur
 
-![Architektur](../assets/architecture.png)
+![Architektur](/assets/architecture.png)
 
 ## Weitere Informationen
 
