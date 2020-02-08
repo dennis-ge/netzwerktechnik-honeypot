@@ -101,6 +101,7 @@ services:
   dionaea:
     container_name: honey_dionaea
     restart: always
+    tty: true
     build:
       context: dionaea/
     ports:
@@ -122,7 +123,15 @@ services:
       - "11211:11211"
       - "27017:27017"
     volumes:
+      - /data/dionaea/roots/ftp:/opt/dionaea/var/dionaea/roots/ftp
+      - /data/dionaea/roots/tftp:/opt/dionaea/var/dionaea/roots/tftp
+      - /data/dionaea/roots/www:/opt/dionaea/var/dionaea/roots/www
+      - /data/dionaea/roots/upnp:/opt/dionaea/var/dionaea/roots/upnp
+      - /data/dionaea:/opt/dionaea/var/dionaea
+      - /data/dionaea/binaries:/opt/dionaea/var/dionaea/binaries
       - dionaea:/opt/dionaea/var/log
+      - /data/dionaea/rtp:/opt/dionaea/var/dionaea/rtp
+  #   - dionaea:/opt/dionaea/var
     networks:
       - honeypots
 
