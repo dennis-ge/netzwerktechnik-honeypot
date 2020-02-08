@@ -26,6 +26,8 @@ Man startet das Ganze mit dem nachfolgendem Befehl, wobei ELK_VERSION die Versio
  - unterstützt viele Protokolle z.B. SMB, FTP, HTTP, SIP(VoIP), MySQL , etc.
  - [GitHub Projekt](https://github.com/DinoTools/dionaea)
 
+Ein Beispiel wie der Honeypot Dionaea mit Sicherheitslücken bei SMB arbeitet ist [hier](/docs/smb_beispiel.md) zu finden.
+
 ## Analyse: ELK-Stack
 
 ### Elasticsearch:
@@ -53,10 +55,6 @@ Man startet das Ganze mit dem nachfolgendem Befehl, wobei ELK_VERSION die Versio
 ## Architektur
 
 ![Architektur](/assets/architecture.png)
-
-## Beispiel
-
-Ein Beispiel wie der Honeypot Dionaea mit Sicherheitslücken bei SMB arbeitet ist [hier](/docs/smb_beispiel.md) zu finden.
 
 ## Weitere Informationen
 
