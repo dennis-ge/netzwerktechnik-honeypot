@@ -54,6 +54,10 @@ Man startet das Ganze mit dem nachfolgendem Befehl, wobei ELK_VERSION die Versio
 
 ![Architektur](/assets/architecture.png)
 
+## Beispiel
+
+Ein Beispiel wie der Honeypot Dionaea mit Sicherheitslücken bei SMB arbeitet ist [hier](/docs/smb_beispiel.md) zu finden.
+
 ## Weitere Informationen
 
 ### Inspiration:

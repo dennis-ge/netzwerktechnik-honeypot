@@ -131,7 +131,6 @@ services:
       - /data/dionaea/binaries:/opt/dionaea/var/dionaea/binaries
       - dionaea:/opt/dionaea/var/log
       - /data/dionaea/rtp:/opt/dionaea/var/dionaea/rtp
-  #   - dionaea:/opt/dionaea/var
     networks:
       - honeypots
 

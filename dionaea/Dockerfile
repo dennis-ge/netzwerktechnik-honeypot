@@ -51,7 +51,7 @@ RUN groupadd --gid 1000 dionaea && \
     chown -R dionaea:dionaea /opt/dionaea/var && \
     rm -rf /opt/dionaea/etc/dionaea/* && \
     mv /root/dist/etc/* /opt/dionaea/etc/dionaea/
-
+ 
 #
 # Setup runtime and clean up
 RUN      apt-get purge -y \
@@ -95,7 +95,6 @@ RUN      apt-get purge -y \
     apt-get autoremove --purge -y && \
     apt-get clean && \
     rm -rf /root/* /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
 
 RUN mkdir /opt/dionaea/var/bitstreams
 
