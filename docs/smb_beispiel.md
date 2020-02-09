@@ -38,3 +38,10 @@ Der nächste Schritt ist es die Sicherheitslücke nun auszunutzen. Hierzu verwen
 Zu sehen ist, dass die Einstellung *RHOSTS* noch leer ist. Diese füllt man mit  `set rhosts <server-ip>`.  Jetzt kann man die Sicherheitslücke mit dem Befehl `exploit` noch ausnutzen. Danach hat man Zugriff auf den SMB Server. Der Angreifer kann nun alles möglichen auf den Server hochladen.
 
 Da es sich hier aber nun um den SMB Server von Dionaea handelt, richten diese Dateien keine Schaden an. Dionaea fertigt eine Kopie der Dateien an und speichert diese. Was dann mit den Kopien geschieht liegt beim Administrator des Honeypots. Mit Dionaea ist es zum Beispiel möglich die Kopien zu [VirusTotal](https://www.virustotal.com/gui/home/upload) zu schicken, um zu überprüfen, um welche Art von Malware es sich handelt. Außerdem werden alle Vorkommnisse in einer SQLite Datenbank und JSON Datei gespeichert gespeichert.
+
+## Quellen:
+- https://de.wikipedia.org/wiki/WannaCry
+- https://www.csoonline.com/article/3227906/what-is-wannacry-ransomware-how-does-it-infect-and-who-was-responsible.html
+- https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0143
+- https://www.honeynet.org/2017/05/30/dionaea-honeypot-from-conficker-to-wannacry-sambacry-cve-2017-7494/
+- https://www.hackingarticles.in/smb-penetration-testing-port-445/
