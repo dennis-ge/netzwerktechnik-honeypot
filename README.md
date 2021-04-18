@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# netzwerktechnik-honeypot
-Honeynet für die Netzwerktechnik Vorlesung an der DHBW Karlsruhe
-=======
 # Netzwerktechnik Projekt Honeypot
 
 Projekt für die Netzwerktechnik Vorlesung im dritten Semester an der DHBW Karlsruhe.
@@ -67,4 +63,3 @@ Ein Beispiel wie der Honeypot Dionaea mit Sicherheitslücken bei SMB arbeitet is
 
  - Telekom Projekt: [T-Pot GitHub](https://github.com/dtag-dev-sec/tpotce), [Sicherheitstacho](https://sicherheitstacho.eu)
  - Honeynet Project: [GitHub](https://github.com/honeynet), [Webseite](https://www.honeynet.org/)
->>>>>>> a3841944e7ea (Update README.md)
